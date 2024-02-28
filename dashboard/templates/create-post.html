@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+</head>
+<body>
+    <h2>Create Post</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="publish_date">Publish Date (optional):</label>
+        <input type="datetime-local" id="publish_date" name="publish_date">
+        <button type="submit">Save Draft</button>
+        <button type="submit" name="schedule">Schedule Post</button>
+        <button type="submit">Publish</button>
+    </form>
+</body>
+</html>

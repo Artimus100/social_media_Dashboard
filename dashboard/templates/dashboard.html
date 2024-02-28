@@ -1,0 +1,17 @@
+dashboard.html
+
+<div id="analytics"></div>
+
+<script>
+    async function fetchAnalytics() {
+        const response = await fetch('/fetch-analytics/');
+        const data = await response.json();
+        document.getElementById('analytics').innerHTML = `
+            <p>Likes: ${data.likes}</p>
+            <p>Shares: ${data.shares}</p>
+            <p>Comments: ${data.comments}</p>
+        `;
+    }
+
+    fetchAnalytics();
+</script>
